@@ -12,6 +12,9 @@ const vue = new Vue({
 			setTimeout(() => {
 				window.speechSynthesis.speak(new SpeechSynthesisUtterance('yes'));
 			}, 100);
+		},
+		calcTime(timestamp) {
+			return moment(timestamp).format('MMMM Do, h:mm a')
 		}
 	}
 });
@@ -29,4 +32,3 @@ socket.onmessage = (e) => {
 		vue.blocks = message.data;
 	}
 }
-

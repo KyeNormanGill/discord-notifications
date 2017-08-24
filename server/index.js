@@ -29,7 +29,7 @@ client.on('message', message => {
 			author: message.author.username,
 			avatar: message.author.displayAvatarURL,
 			where: `${message.guild.name}#${message.channel.name}`,
-			timestamp: message.createdAt
+			timestamp: message.createdTimestamp
 		});
 		if (messages.length > 30) {
 			messages.pop();

@@ -21,7 +21,7 @@
 						<img class="avatar" :src="block.avatar" :alt="block.author" width="90px">
 					</div>
 					<div class="text-box">
-						<p class="author">{{ block.author }}<span class="date">{{ block.timestamp }}</span></p>
+						<p class="author">{{ block.author }}<span class="date">{{ calcTime(block.timestamp) }}</span></p>
 						<p class="content">{{ block.content }}</p>
 					</div>
 				</div>
