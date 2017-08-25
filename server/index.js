@@ -26,7 +26,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.channel.type === 'dm') return;
+	if (message.channel.type === 'dm' || message.author.bot) return;
 	if (triggerWords.some(word => message.content.toLowerCase().includes(word))) {
 		messages.unshift({
 			content: message.content, 
