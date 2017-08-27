@@ -23,6 +23,11 @@ server.once('listening', () => {
 
 client.once('ready', () => {
 	console.log(`Discord check!`);
+	setInterval(() => {
+		client.users.forEach(user => delete user);
+		client.guilds.forEach(g => delete g.members);
+		console.log('Clearing cache...')
+	}, 300000)
 });
 
 client.on('message', message => {
