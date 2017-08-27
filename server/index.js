@@ -3,9 +3,9 @@ const { Client } = require('discord.js');
 const { port, token } = require('./config.json');
 
 const client = new Client({
-	messageCacheMaxSize: 5,
-	messageCacheLifetime: 20,
-	messageSweepInterval: 60000
+	messageCacheMaxSize: 1,
+	messageCacheLifetime: 1,
+	messageSweepInterval: 1
 });
 const server = new Server({ port }, () => {
 	server.on('connection', connection => {
@@ -23,11 +23,6 @@ server.once('listening', () => {
 
 client.once('ready', () => {
 	console.log(`Discord check!`);
-	setInterval(() => {
-		client.users.forEach(user => delete user);
-		client.guilds.forEach(g => delete g.members);
-		console.log('Clearing cache...')
-	}, 300000)
 });
 
 client.on('message', message => {
