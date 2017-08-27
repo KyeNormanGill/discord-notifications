@@ -1,11 +1,12 @@
 const { Server, OPEN } = require('uws');
 const { Client } = require('discord.js');
-const { port, token } = require('./config.json');
+const { port, token, disabledEvents } = require('./config.json');
 
 const client = new Client({
 	messageCacheMaxSize: 1,
 	messageCacheLifetime: 1,
-	messageSweepInterval: 1
+	messageSweepInterval: 1,
+	disabledEvents
 });
 const server = new Server({ port }, () => {
 	server.on('connection', connection => {
