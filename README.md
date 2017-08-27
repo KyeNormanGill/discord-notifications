@@ -7,4 +7,4 @@
 </div>
 
 ## Credits
-Thankyou [lipgloss](https://github.com/gloss-water) for this idea!
+Thank you [lipgloss](https://github.com/gloss-water) for this idea!
